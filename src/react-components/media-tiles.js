@@ -311,7 +311,7 @@ class MediaTiles extends Component {
                 </div>
                 <div className={styles.presence}>
                   <FontAwesomeIcon icon={faUsers} />
-                  <span>{entry.member_count}</span>
+                  <span>{entry.member_count}/50</span>
                 </div>
               </>
             )}
