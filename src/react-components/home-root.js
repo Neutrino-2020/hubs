@@ -402,10 +402,6 @@ class HomeRoot extends Component {
             <img src={configs.image("logo")} />
           </div>
         </div>
-        <div className={styles.ctaButtons}>
-          {this.props.showCreate && this.renderCreateButton()}
-          {this.renderPwaButton()}
-        </div>
       </div>,
       <div className={styles.heroPanel} key={1}>
         <h2> Welcome to the Neutrino 2020 Poster Session! </h2>
@@ -422,6 +418,9 @@ class HomeRoot extends Component {
             />
           </div>
         </div>
+      </div>,
+      <div className={styles.ctaButtons}>
+        {this.props.showCreate && this.renderCreateButton()}
       </div>
     ];
   }
@@ -439,7 +438,6 @@ class HomeRoot extends Component {
         </div>
         <div className={styles.ctaButtons}>
           {this.props.showCreate && this.renderCreateButton()}
-          {this.renderPwaButton()}
         </div>
       </div>
     );
