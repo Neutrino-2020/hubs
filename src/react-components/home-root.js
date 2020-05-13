@@ -407,6 +407,11 @@ class HomeRoot extends Component {
           {this.renderPwaButton()}
         </div>
       </div>,
+      <div className={styles.heroPanel} key={1}>
+        <h2> Welcome to the Neutrino 2020 Poster Session! </h2>
+        <h3> Select one of the rooms below to get started. </h3>
+        <p>  </p>
+      </div>,
       <div className={styles.heroPanel} key={2}>
         <div className={classNames([mediaBrowserStyles.mediaBrowser, mediaBrowserStyles.mediaBrowserInline])}>
           <div className={classNames([mediaBrowserStyles.box, mediaBrowserStyles.darkened])}>
