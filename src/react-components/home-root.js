@@ -220,6 +220,9 @@ class HomeRoot extends Component {
                       <FormattedMessage id="home.admin" />
                     </a>
                   )}
+                  <a href="https://hubs.mozilla.com/cloud" rel="noreferrer noopener">
+                    <FormattedMessage id="BS" />
+                  </a>
                 </div>
               </div>
               <div className={styles.signIn}>
@@ -394,6 +397,18 @@ class HomeRoot extends Component {
     );
   }
 
+  renderPosterListButton() {
+    return (
+      <a href="/admin" rel="noreferrer noopener">
+        <button
+          className={classNames(styles.primaryButton, styles.ctaButton)}
+        >
+          <FormattedMessage id="Show all posters and videos" />
+        </button>
+      </a>
+    );
+  }
+
   renderFeaturedRoomsHero() {
     return [
       <div className={styles.heroPanel} key={1}>
@@ -418,6 +433,9 @@ class HomeRoot extends Component {
             />
           </div>
         </div>
+      </div>,
+      <div className={styles.ctaButtons}>
+        {this.renderPosterListButton()}
       </div>,
       <div className={styles.ctaButtons}>
         {this.props.showCreate && this.renderCreateButton()}
