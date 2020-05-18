@@ -1340,12 +1340,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const meta = info.metas[info.metas.length - 1];
             const occupantCount = Object.entries(hubChannel.presence.state).length;
+            console.log('presence.onJoin, occupantCount', occupantCount)
+
+            if (meta.profile.hasOwnProperty('identityName')) {
+              meta.profile.displayName = meta.profile.identityName;
+            }
 
             if (occupantCount <= NOISY_OCCUPANT_COUNT) {
               if (current) {
                 // Change to existing presence
                 const isSelf = sessionId === socket.params().session_id;
                 const currentMeta = current.metas[0];
+
+                if (meta.profile.hasOwnProperty('identityName')) {
+                  currentMeta.profile.displayName = currentMeta.profile.identityName;
+                }
 
                 if (
                   !isSelf &&
@@ -1374,6 +1383,9 @@ document.addEventListener("DOMContentLoaded", async () => {
               } else if (info.metas.length === 1) {
                 // New presence
                 const meta = info.metas[0];
+                if (meta.profile.hasOwnProperty('identityName')) {
+                  meta.profile.displayName = meta.profile.identityName;
+                }
 
                 if (meta.presence && meta.profile.displayName) {
                   addToPresenceLog({
@@ -1404,6 +1416,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (occupantCount > NOISY_OCCUPANT_COUNT) return;
 
             const meta = info.metas[0];
+            if (meta.profile.hasOwnProperty('identityName')) {
+              meta.profile.displayName = meta.profile.identityName;
+            }
 
             if (meta.profile.displayName) {
               addToPresenceLog({
@@ -1517,7 +1532,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (from) {
         return from;
       } else if (userInfo) {
-        return userInfo.metas[0].profile.displayName;
+        return userInfo.metas[0].profile.identityName;
       } else {
         return "Mystery user";
       }
@@ -1551,7 +1566,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       addToPresenceLog({
         type: "scene_changed",
-        name: userInfo.metas[0].profile.displayName,
+        name: userInfo.metas[0].profile.identityName,
         sceneName: hub.scene ? hub.scene.name : "a custom URL"
       });
     }
@@ -1575,7 +1590,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       addToPresenceLog({
         type: "hub_name_changed",
-        name: userInfo.metas[0].profile.displayName,
+        name: userInfo.metas[0].profile.identityName,
         hubName: hub.name
       });
     }

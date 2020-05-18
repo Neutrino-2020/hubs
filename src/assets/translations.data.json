@@ -110,7 +110,7 @@
     "entry.mute-on-entry": "Mute my microphone",
     "profile.save": "Accept",
     "profile.display_name.validation_warning": "Alphanumerics and hyphens. At least 3 characters, no more than 32",
-    "profile.header": "Name & Avatar",
+    "profile.header": "Avatar",
     "profile.terms_of_use": "Terms of Use",
     "profile.privacy_notice": "Privacy Notice",
     "profile.choose_avatar": "Browse Avatars",

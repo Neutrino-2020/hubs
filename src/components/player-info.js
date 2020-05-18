@@ -101,7 +101,8 @@ AFRAME.registerComponent("player-info", {
     this.updateDisplayNameFromPresenceMeta(e.detail);
   },
   updateDisplayNameFromPresenceMeta(presenceMeta) {
-    this.displayName = presenceMeta.profile.displayName;
+    // this.displayName = presenceMeta.profile.displayName;
+    this.displayName = presenceMeta.profile.identityName;
     this.identityName = presenceMeta.profile.identityName;
     this.isRecording = !!(presenceMeta.streaming || presenceMeta.recording);
     this.isOwner = !!(presenceMeta.roles && presenceMeta.roles.owner);
