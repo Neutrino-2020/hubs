@@ -142,7 +142,7 @@ class ProfileEntryPanel extends Component {
             <label htmlFor="#profile-entry-display-name" className={styles.title}>
               <FormattedMessage id="profile.header" />
             </label>
-            {this.props.displayNameOverride ? (
+            {/*{this.props.displayNameOverride ? (
               <span className={styles.displayName}>{this.props.displayNameOverride}</span>
             ) : (
               <input
@@ -158,7 +158,7 @@ class ProfileEntryPanel extends Component {
                 title={formatMessage({ id: "profile.display_name.validation_warning" })}
                 ref={inp => (this.nameInput = inp)}
               />
-            )}
+            )}*/}
 
             {this.state.avatar ? (
               <div className={styles.preview}>
