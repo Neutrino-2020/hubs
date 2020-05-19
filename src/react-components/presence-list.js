@@ -65,6 +65,11 @@ export default class PresenceList extends Component {
     const meta = data.metas[data.metas.length - 1];
     const context = meta.context;
     const profile = meta.profile;
+    console.log('presence-list.js, profile', profile)
+    if (profile.hasOwnProperty('identityName')) {
+      profile.displayName = profile.identityName;
+    }
+    console.log('presence-list.js, new profile', profile)
     const recording = meta.streaming || meta.recording;
     const icon = recording ? <FontAwesomeIcon icon={faVideo} /> : getPresenceIcon(context);
     const isBot = context && context.discord;
