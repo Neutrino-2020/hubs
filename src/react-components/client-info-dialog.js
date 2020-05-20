@@ -71,7 +71,7 @@ export default class ClientInfoDialog extends Component {
         onClose();
 
         this.props.showNonHistoriedDialog(PromoteClientDialog, {
-          displayName: profile.displayName,
+          displayName: profile.identityName,
           onConfirm: () => hubChannel.addOwner(clientId)
         });
       },
@@ -121,7 +121,7 @@ export default class ClientInfoDialog extends Component {
     const { hubChannel, clientId, onClose } = this.props;
     const title = (
       <div className={styles.title}>
-        {displayName}
+        {identityName}
         <div className={styles.identityName}>{identityName}</div>
       </div>
     );
@@ -145,7 +145,7 @@ export default class ClientInfoDialog extends Component {
               <button
                 onClick={() => this.addOwner()}
                 disabled={!targetIsSignedIn}
-                title={targetIsSignedIn ? "Promote" : `${profile.displayName} is signed out.`}
+                title={targetIsSignedIn ? "Promote" : `${profile.identityName} is signed out.`}
               >
                 <img className={styles.buttonIcon} src="../assets/images/add-owner.png" />
                 <FormattedMessage id="client-info.add-owner" />
