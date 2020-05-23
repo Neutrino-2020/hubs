@@ -70,7 +70,7 @@ export default class PreferencesScreen extends Component {
         prefType: PREFERENCE_LIST_ITEM_TYPE.NUMBER_WITH_RANGE,
         min: 0,
         max: 90,
-        defaultNumber: 45
+        defaultNumber: 10
       },
       { key: "disableMovement", prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX, defaultBool: false },
       { key: "disableBackwardsMovement", prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX, defaultBool: false },
