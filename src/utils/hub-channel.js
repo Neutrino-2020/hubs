@@ -3,6 +3,7 @@ import { EventTarget } from "event-target-shim";
 import { Presence } from "phoenix";
 import { migrateChannelToSocket, discordBridgesForPresences } from "./phoenix-utils";
 import configs from "./configs";
+import permissions from "./permissions.json";
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const MS_PER_MONTH = 1000 * 60 * 60 * 24 * 30;
@@ -65,9 +66,26 @@ export default class HubChannel extends EventTarget {
       return acc + (usingSlot ? 1 : 0);
     }, 0);
 
+    console.log('hub', hub);
+    console.log('this.presence', this.presence);
+
+    const user_profile = Object.values(this.presence.state).reduce((acc, { metas }) => {
+      const meta = metas[metas.length - 1];
+      return meta.profile;
+    }, 0);
+
+    for(var i = 0; i < permissions.length; i++) {
+      var obj = permissions[i];
+      console.log('User', obj.RoomID, obj.Name);
+      if (hub.hub_id == obj.RoomID && user_profile.identityName == obj.Name) {
+        console.log('Letting poster presenter in by default.', hub.hub_id, user_profile.identityName);
+        return true;
+      }
+
+    }
+
     // This now exists in room settings but a default is left here to support old reticulum servers
     const DEFAULT_ROOM_SIZE = 24;
-    console.log('Room size is ', (hub.room_size !== undefined ? hub.room_size : DEFAULT_ROOM_SIZE));
 
     return roomEntrySlotCount < (hub.room_size !== undefined ? hub.room_size : DEFAULT_ROOM_SIZE);
   }
