@@ -220,8 +220,8 @@ class HomeRoot extends Component {
                       <FormattedMessage id="home.admin" />
                     </a>
                   )}
-                  <a href="https://hubs.mozilla.com/cloud" rel="noreferrer noopener">
-                    <FormattedMessage id="BS" />
+                  <a href="/docs.html" rel="noreferrer noopener">
+                    <FormattedMessage id="Instructions" />
                   </a>
                 </div>
               </div>

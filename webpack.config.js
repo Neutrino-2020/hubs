@@ -226,6 +226,7 @@ module.exports = async (env, argv) => {
       link: path.join(__dirname, "src", "link.js"),
       discord: path.join(__dirname, "src", "discord.js"),
       cloud: path.join(__dirname, "src", "cloud.js"),
+      docs: path.join(__dirname, "src", "docs.js"),
       "whats-new": path.join(__dirname, "src", "whats-new.js")
     },
     output: {
@@ -448,6 +449,12 @@ module.exports = async (env, argv) => {
         filename: "cloud.html",
         template: path.join(__dirname, "src", "cloud.html"),
         chunks: ["vendor", "cloud"],
+        inject: "head"
+      }),
+      new HTMLWebpackPlugin({
+        filename: "docs.html",
+        template: path.join(__dirname, "src", "docs.html"),
+        chunks: ["vendor", "docs"],
         inject: "head"
       }),
       new CopyWebpackPlugin([
