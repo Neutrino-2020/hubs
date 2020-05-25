@@ -128,17 +128,8 @@ function HubsCloudPage() {
         <Header />
         <main>
           <div className={styles.hero}>
-            <section className={styles.colLg}>
-              <div className={classNames(styles.hideLgUp, styles.centerLg)}>
-                <h1>Introducing Hubs Cloud</h1>
-              </div>
-              <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <iframe
-                  src="https://player.vimeo.com/video/412377556?app_id=122963"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen=""
-                  frameBorder="0"
-                />
+            <section className={styles.center}>
+              <div className={classNames(styles.center, styles.center)}>
               </div>
               <div className={styles.heroContent}>
                 <h1 className={classNames(styles.hideLgDown, styles.centerLg)}>Introducing Hubs Cloud</h1>
