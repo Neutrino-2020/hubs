@@ -12,7 +12,7 @@ import UnlessFeature from "./react-components/unless-feature";
 
 import registerTelemetry from "./telemetry";
 
-registerTelemetry("/cloud", "Hubs Cloud Landing Page");
+registerTelemetry("/cloud", "Neutrino 2020 Hubs Docs Page");
 
 addLocaleData([...en]);
 
