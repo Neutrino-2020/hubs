@@ -333,17 +333,17 @@ footer {
   }
 
   @media(min-width: $breakpoint-lg) {
-    width: 35%;
+    width: 30%;
     max-width: 960px;
   }
 
   @media(min-width: $breakpoint-xl) {
-    width: 35%;
+    width: 30%;
     max-width: 1140px;
   }
 
   @media(min-width: $breakpoint-xxl) {
-    width: 35%;
+    width: 30%;
     max-width: 1410px;
   }
 }

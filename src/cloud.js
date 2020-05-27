@@ -137,13 +137,16 @@ function HubsCloudPage() {
               <div className={styles.heroContent}>
                 <h1>Neutrino 2020 Hubs</h1>
                 <p className={styles.centerLg}>
-                  Hubs Cloud creates and manages all of the AWS resources needed to host your own immersive spaces from
-                  your company or organization’s own account. Bring your own domain or use Route53 to create a new site,
-                  running on a single EC2 instance or scaled up to multiple servers for greater system-wide concurrency.
-                  Easily customize your platform with your own branding, upload your own 3D content, or select from the
-                  vast array of avatars and scenes licensed under Creative Commons for the Hubs platform.
+                  This year the Neutrino 2020 conference is entirely online. This poses a particular problem for a
+                  poster session, which main goal is to facilitate the interaction among all conference
+                  partecipants, and to give everyone the oppurtinity to share their own work.
+                  In an effort to keep the same spirit, we are hosting a virtual reality (VR) poster session,
+                  using a customized version of <a href="https://hubs.mozilla.com/#/">Mozilla Hubs</a>.
+                  Hubs is a social VR platform that runs right in the browser.
+                  Conference participants can access Hubs rooms by clicking the button below and logging in
+                  with the email address they used to register for the conference on the Indico site.
+                  This webpage contains additional information to improve your Hubs experience.
                 </p>
-                <h3 className={styles.center}>Get it today on the AWS Marketplace</h3>
                 <div className={classNames(styles.row, styles.colLg, styles.centerLg)}>
                   <a className={styles.primaryButton} href="/">
                     Enter a Room
@@ -185,7 +188,7 @@ function HubsCloudPage() {
           <div className={styles.herow}>
             <section className={styles.colLg}>
               <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <img src="https://nu2020-data.s3.amazonaws.com/docs/audio_setup.png" alt="Audio Setup"/>
+                <img src="./assets/docs/audio_setup.png" alt="Audio Setup"/>
               </div>
               <div className={styles.heroContent}>
                 <p className={styles.centerLg}>
@@ -208,7 +211,7 @@ function HubsCloudPage() {
           <div className={styles.herow}>
             <section className={styles.colLg}>
               <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <img src="https://nu2020-data.s3.amazonaws.com/docs/hubs-user-interface.jpeg" alt="UI"/>
+                <img src="./assets/docs/hubs-user-interface.png" alt="UI"/>
               </div>
               <div className={styles.heroContent}>
                 <p className={styles.centerLg}>
@@ -237,7 +240,7 @@ function HubsCloudPage() {
           <div className={styles.herow}>
             <section className={styles.colLg}>
               <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <img src="https://nu2020-data.s3.amazonaws.com/docs/tcp_fail.png" alt="'Unable to connect' error"/>
+                <img src="./assets/docs/tcp_fail.png" alt="'Unable to connect' error"/>
               </div>
               <div className={styles.heroContent}>
                 <p className={styles.centerLg}>
@@ -264,7 +267,7 @@ function HubsCloudPage() {
               Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.
           </section>
 
-          <section className={classNames(styles.features, styles.colLg, styles.centerLg)}>
+          {/*<section className={classNames(styles.features, styles.colLg, styles.centerLg)}>
             <div>
               <h3>Engage</h3>
               <p>
@@ -294,7 +297,7 @@ function HubsCloudPage() {
                 the process.
               </p>
             </div>
-          </section>
+          </section>*/ }
         </main>
         <Footer />
       </>
