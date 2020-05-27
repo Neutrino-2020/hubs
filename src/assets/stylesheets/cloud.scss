@@ -91,7 +91,7 @@ main {
 
   @media(min-width: $breakpoint-lg) {
     order: 0;
-    display: flex;
+    display: relative;
     flex-direction: column;
   }
 
@@ -100,22 +100,27 @@ main {
     max-width: 100%;
 
     @media(min-width: $breakpoint-sm) {
+      width: 80%;
       max-width: 540px;
     }
 
     @media(min-width: $breakpoint-md) {
+      width: 80%;
       max-width: 720px;
     }
 
     @media(min-width: $breakpoint-lg) {
+      width: 50%;
       max-width: 960px;
     }
 
     @media(min-width: $breakpoint-xl) {
+      width: 50%;
       max-width: 1140px;
     }
 
     @media(min-width: $breakpoint-xxl) {
+      width: 50%;
       max-width: 1410px;
     }
   }
@@ -123,10 +128,20 @@ main {
 
 :local(.hero) {
   background-color: #F3F3F3;
-  
+
 
   & > section {
-    display: flex; 
+    display: flex;
+    padding: 32px;
+  }
+}
+
+:local(.herow) {
+  background-color: white;
+
+
+  & > section {
+    display: flex;
     padding: 32px;
   }
 }
@@ -302,5 +317,33 @@ footer {
   @media(max-width: $breakpoint-lg) {
     text-align: center;
     align-items: center;
+  }
+}
+
+.logo {
+  width: 50%;
+  @media(min-width: $breakpoint-sm) {
+    width: 80%;
+    max-width: 540px;
+  }
+
+  @media(min-width: $breakpoint-md) {
+    width: 80%;
+    max-width: 720px;
+  }
+
+  @media(min-width: $breakpoint-lg) {
+    width: 35%;
+    max-width: 960px;
+  }
+
+  @media(min-width: $breakpoint-xl) {
+    width: 35%;
+    max-width: 1140px;
+  }
+
+  @media(min-width: $breakpoint-xxl) {
+    width: 35%;
+    max-width: 1410px;
   }
 }

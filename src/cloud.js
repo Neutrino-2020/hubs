@@ -128,20 +128,14 @@ function HubsCloudPage() {
         <Header />
         <main>
           <div className={styles.hero}>
-            <section className={styles.colLg}>
-              <div className={classNames(styles.hideLgUp, styles.centerLg)}>
-                <h1>Introducing Hubs Cloud</h1>
-              </div>
-              <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <iframe
-                  src="https://player.vimeo.com/video/412377556?app_id=122963"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen=""
-                  frameBorder="0"
-                />
-              </div>
+            <div className={styles.center}>
+              <a href="/">
+                <img className="logo" src={configs.image("logo")} />
+              </a>
+            </div>
+            <section className={styles.center}>
               <div className={styles.heroContent}>
-                <h1 className={classNames(styles.hideLgDown, styles.centerLg)}>Introducing Hubs Cloud</h1>
+                <h1>Neutrino 2020 Hubs</h1>
                 <p className={styles.centerLg}>
                   Hubs Cloud creates and manages all of the AWS resources needed to host your own immersive spaces from
                   your company or organization’s own account. Bring your own domain or use Route53 to create a new site,
@@ -151,36 +145,149 @@ function HubsCloudPage() {
                 </p>
                 <h3 className={styles.center}>Get it today on the AWS Marketplace</h3>
                 <div className={classNames(styles.row, styles.colLg, styles.centerLg)}>
-                  <a className={styles.primaryButton} href="https://aws.amazon.com/marketplace/pp/B084RZH56R">
-                    Get Hubs Cloud Personal
-                  </a>
-                  <a className={styles.primaryButton} href="https://aws.amazon.com/marketplace/pp/B084WNGRRP">
-                    Get Hubs Cloud Enterprise
+                  <a className={styles.primaryButton} href="/">
+                    Enter a Room
                   </a>
                 </div>
                 <div className={classNames(styles.getStarted, styles.center)}>
-                  <a href="https://hubs.mozilla.com/docs/hubs-cloud-aws-quick-start.html">Quick Start Guide</a>
+                  <a href="#troubleshooting">Problems? Check the troubleshooting section below.</a>
                 </div>
               </div>
             </section>
           </div>
+          <section className={styles.left}>
+            <h2>1. Log In</h2>
+            You will only be able to enter a virtual room if you are logged in. To log in:
+            <ul>
+              <li>Go to the <a href="/">main page</a> and click on the "Log in" link on the top right.</li>
+              <li>Enter the email you used for you Indico registration.</li>
+              <li>You will receive an email with a link (make sure to check your spam folder).</li>
+              <li>Clicking on the link will log you into Neutrino 2020 Hubs!</li>
+            </ul>
+            <h2>2. Enter a Room</h2>
+            <p>
+              We recommend using Mozilla Firefox. Hubs works best in Firefox and Chrome, but it also runs on Edge, and desktop Safari.<br></br>
+              The poster session is spread over several virtual rooms.<br></br>
+              You can see all the available rooms in the <a href="/">main page</a>.<br></br>
+              There is a maximum of 40 partecipants per room.<br></br>
+              You can see the number of partecipants in the small icon at the bottom right of every room.<br></br>
+              To enter a room, simply pick one which is not full and click on it.<br></br>
+            </p>
+            <p>
+              Before entering, you are in the room's lobby.<br></br>
+              You can see what's going on inside the room but you can't interact.<br></br>
+              Entering the room can be a bit different depending on the type of device you are using.<br></br>
+              Click "Enter Room" and follow the prompts to select an avatar and enable the mic.<br></br>
+              Make sure you are using headphone and that you select the proper mic when asked to do so.<br></br>
+              Before entering the room, make sure you test your mic and speaker as shown in the picture.<br></br>
+            </p>
+          </section>
+          <div className={styles.herow}>
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="https://nu2020-data.s3.amazonaws.com/docs/audio_setup.png" alt="Audio Setup"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  Before entering the room, make sure you test your mic and speaker as shown in the picture.
+                  If you speak, you should see the mic circle filling up.
+                  If you click on the audio button, you should be able to hear a sound.
+                  Also, make sure you select the right audio device from the dropdown menu.
+                  You should be wearing headphones. Hubs doesn't perform well without them.
+                </p>
+              </div>
+            </section>
+          </div>
+          <section className={styles.left}>
+            <h2>3. Explore</h2>
+            <h3>Look Around</h3>
+            Try exploring your new space. On desktop use your <b>WASD</b> keys to move around, or use your right mouse button to jump. Rotate your view using the <b>Q</b> and <b>E</b> keys, or hold down your left mouse button and drag.
+            For VR and mobile controls see our list of <a href="https://hubs.mozilla.com/docs/hubs-controls">Hubs controls</a>.
+            <h3>User Interface</h3>
+          </section>
+          <div className={styles.herow}>
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="https://nu2020-data.s3.amazonaws.com/docs/hubs-user-interface.jpeg" alt="UI"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  Take a moment to take a look around the user interface. You can mute your mic, take photos, and use a laser pointer.
+                </p>
+              </div>
+            </section>
+          </div>
+          <section className={styles.left}>
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            Having problems? Belowe we have collected some of the typical issues that may encounter.<br/>
+            Some simple tips:
+            <ul>
+              <li>Try using Firefox.</li>
+              <li>Wear wired headphones.</li>
+              <li>Use your computer and not a mobile device.</li>
+              <li>Restart your browser.</li>
+            </ul>
+            <h3>Getting stuck on loading screen</h3>
+              If you are getting stuck on the loading screen, try refreshing the page or loading the scene on another browser or device.
+            <h3>There is echo in the room</h3>
+              Echo may occur if a participant is not wearing headphones.
+              You can also reduce the volume of the user in their avatar menu.
+            <h3>'Unable to connect' error</h3>
+          </section>
+          <div className={styles.herow}>
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="https://nu2020-data.s3.amazonaws.com/docs/tcp_fail.png" alt="'Unable to connect' error"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  If you see this error message, try clicking on the link "connecting via TCP".
+                  If this also doesn't work and you are not using Firefox, try on a Firefox browser.
+                </p>
+              </div>
+            </section>
+          </div>
+          <section className={styles.left}>
+            An error that says 'unable to connect' is often caused by a firewall.
+            At a minimum, Hubs needs your computer to connect to external servers port 80 and 443, both via TLS.
+            Ideally you should also open up ports 51610-65535 on UDP and TCP for Hubs on your router's firewall.
+            Please note that for self-hosted versions of Hubs you need to open ports 49152-60999 on UDP and TCP.
+            You will also need to open port 19302 on UDP and TCP.
+            <h3>Mic not working</h3>
+            First check that your mic is properly plugged in, and that you selected the right mic in the browser permissions (typically to the left of the address bar).
+            If it is still not working, you may need to look in the privacy and security settings on your computer to ensure that mic permissions are not being blocked.
+            If it still does not work, try in another browser. Hubs works best in Firefox and Chrome, but it also runs on Edge, and desktop Safari.<br/>
+            If the mic is picking up your voice but it sounds distorted, check you aren't using a bluetooth headset mic, as these do not always work well with browser-based tools.
+
+            <h3>Need help with something else?</h3>
+              You can ask in the Nu2020 Slack channel #nu2020-hubs.<br/>
+              Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.
+          </section>
+
           <section className={classNames(styles.features, styles.colLg, styles.centerLg)}>
-            <div className={styles.center}>
-              <h3>Do-It-Yourself Events</h3>
+            <div>
+              <h3>Engage</h3>
               <p>
-                With Hubs Cloud, you can enable your own virtual events infrastructure by tailoring your deployment to
-                meet your own needs for uptime, concurrency, and account needs.
+                You will only be able to enter a virtual room if you are logged in.
+              </p>
+              <p>
+                To log in, got to the main page and click on the "Log in" link on the top right.
+                Enter the email you used for you Indico registration.
+              </p>
+              <p>
+                You will receive an email with
+                a link. Clicking on the link will log you into Neutrino 2020 Hubs!
               </p>
             </div>
             <div className={styles.center}>
-              <h3>Self-Hosted Infrastructure</h3>
+              <h3>Enter a Room</h3>
               <p>
                 With Hubs Cloud, your deployment is on your own organization’s infrastructure, keeping your sensitive
                 data private and secure within an AWS account your team owns.
               </p>
             </div>
             <div className={styles.center}>
-              <h3>Usage-Based Pricing</h3>
+              <h3>Engage</h3>
               <p>
                 Your cost to run Hubs Cloud will be dependent on the size of your deployed instances, bandwidth, and
                 storage used. All billing is handled through AWS, so you’ll get visibility into charges at every step of
