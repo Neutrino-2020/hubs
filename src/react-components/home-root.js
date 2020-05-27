@@ -192,7 +192,7 @@ class HomeRoot extends Component {
                     </a>
                   </IfFeature>
                   <IfFeature name="show_community_link">
-                    <a href={configs.link("community", "https://discord.gg/wHmY4nd")} rel="noreferrer noopener">
+                    <a href={configs.link("community", "https://conferences.fnal.gov/nu2020/contacts/")} rel="noreferrer noopener">
                       <FormattedMessage id="home.community_link" />
                     </a>
                   </IfFeature>

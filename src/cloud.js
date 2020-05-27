@@ -40,7 +40,7 @@ function Header() {
           </IfFeature>
           <IfFeature name="show_community_link">
             <li>
-              <a href={configs.link("community", "https://discord.gg/wHmY4nd")}>
+              <a href={configs.link("community", "https://conferences.fnal.gov/nu2020/contacts/")}>
                 <FormattedMessage id="home.community_link" />
               </a>
             </li>
