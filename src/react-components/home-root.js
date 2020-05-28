@@ -192,7 +192,7 @@ class HomeRoot extends Component {
                     </a>
                   </IfFeature>
                   <a href="http://nu2020.fnal.gov" rel="noreferrer noopener">
-                    <FormattedMessage id="Conference" />
+                    <FormattedMessage id="Conference Home" />
                   </a>
                   <IfFeature name="show_community_link">
                     <a href={configs.link("community", "https://conferences.fnal.gov/nu2020/contacts/")} rel="noreferrer noopener">
@@ -209,9 +209,9 @@ class HomeRoot extends Component {
                       <FormattedMessage id="home.docs_link" />
                     </a>
                   </IfFeature>
-                  <IfFeature name="show_cloud">
-                    <a href="https://hubs.mozilla.com/cloud" rel="noreferrer noopener">
-                      <FormattedMessage id="home.cloud_link" />
+                  <IfFeature name="show_community_link">
+                    <a href="/cloud" rel="noreferrer noopener">
+                      <FormattedMessage id="Instructions" />
                     </a>
                   </IfFeature>
                   {this.props.showAdmin && (
@@ -223,9 +223,6 @@ class HomeRoot extends Component {
                       <FormattedMessage id="home.admin" />
                     </a>
                   )}
-                  <a href="/docs.html" rel="noreferrer noopener">
-                    <FormattedMessage id="Instructions" />
-                  </a>
                 </div>
               </div>
               <div className={styles.signIn}>
@@ -402,11 +399,23 @@ class HomeRoot extends Component {
 
   renderPosterListButton() {
     return (
-      <a href="/admin" rel="noreferrer noopener">
+      <a href="https://nusoft.fnal.gov/nova/users/habig/webtemp/Nu2020PosterWeb/" rel="noreferrer noopener">
         <button
           className={classNames(styles.primaryButton, styles.ctaButton)}
         >
-          <FormattedMessage id="Show all posters and videos" />
+          <FormattedMessage id="Show all Posters and Videos" />
+        </button>
+      </a>
+    );
+  }
+
+  renderInstructionsButton() {
+    return (
+      <a href="/cloud" rel="noreferrer noopener">
+        <button
+          className={classNames(styles.primaryButton, styles.ctaButton)}
+        >
+          <FormattedMessage id="Instructions" />
         </button>
       </a>
     );
@@ -425,6 +434,9 @@ class HomeRoot extends Component {
         <h2> Welcome to the Neutrino 2020 Poster Session! </h2>
         <h3> Select one of the rooms below to get started. </h3>
         <p>  </p>
+      </div>,
+      <div className={styles.ctaButtons}>
+        {this.renderInstructionsButton()}
       </div>,
       <div className={styles.heroPanel} key={2}>
         <div className={classNames([mediaBrowserStyles.mediaBrowser, mediaBrowserStyles.mediaBrowserInline])}>
