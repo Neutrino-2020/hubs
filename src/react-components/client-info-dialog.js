@@ -157,7 +157,7 @@ export default class ClientInfoDialog extends Component {
                 <FormattedMessage id="client-info.remove-owner" />
               </button>
             )}
-            {!isHidden && (
+            {/*{!isHidden && (
               <button onClick={() => this.hide()}>
                 <FormattedMessage id="client-info.hide-button" />
               </button>
@@ -166,7 +166,7 @@ export default class ClientInfoDialog extends Component {
               <button onClick={() => this.unhide()}>
                 <FormattedMessage id="client-info.unhide-button" />
               </button>
-            )}
+            )}*/}
             {mayMute && (
               <button onClick={() => this.mute()}>
                 <FormattedMessage id="client-info.mute-button" />
