@@ -259,11 +259,11 @@ AFRAME.registerComponent("pen", {
       const paths = pathsMap[this.grabberId];
       if (userinput.get(paths.startDrawing)) {
         this._startDraw();
-        sfx.playSoundOneShot(SOUND_PEN_START_DRAW);
+        // sfx.playSoundOneShot(SOUND_PEN_START_DRAW);
       }
       if (userinput.get(paths.stopDrawing)) {
         this._endDraw();
-        sfx.playSoundOneShot(SOUND_PEN_STOP_DRAW);
+        // sfx.playSoundOneShot(SOUND_PEN_STOP_DRAW);
       }
       const penScaleMod = userinput.get(paths.scalePenTip);
       if (penScaleMod) {

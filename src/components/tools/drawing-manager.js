@@ -20,23 +20,23 @@ AFRAME.registerComponent("drawing-manager", {
   },
 
   createDrawing() {
-    if (!this.createDrawingPromise) {
-      this.createDrawingPromise = new Promise(resolve => {
-        this.drawingEl = document.createElement("a-entity");
-        this.drawingEl.setAttribute("networked", "template: #interactable-drawing");
-        this.el.sceneEl.appendChild(this.drawingEl);
+    // if (!this.createDrawingPromise) {
+    //   this.createDrawingPromise = new Promise(resolve => {
+    //     this.drawingEl = document.createElement("a-entity");
+    //     this.drawingEl.setAttribute("networked", "template: #interactable-drawing");
+    //     this.el.sceneEl.appendChild(this.drawingEl);
 
-        const handNetworkedDrawingInit = e => {
-          if (e.detail.name === "networked-drawing") {
-            this.drawing = this.drawingEl.components["networked-drawing"];
-            this.drawingEl.removeEventListener("componentinitialized", handNetworkedDrawingInit);
-            resolve();
-          }
-        };
+    //     const handNetworkedDrawingInit = e => {
+    //       if (e.detail.name === "networked-drawing") {
+    //         this.drawing = this.drawingEl.components["networked-drawing"];
+    //         this.drawingEl.removeEventListener("componentinitialized", handNetworkedDrawingInit);
+    //         resolve();
+    //       }
+    //     };
 
-        this.drawingEl.addEventListener("componentinitialized", handNetworkedDrawingInit);
-      });
-    }
+    //     this.drawingEl.addEventListener("componentinitialized", handNetworkedDrawingInit);
+    //   });
+    // }
     return this.createDrawingPromise;
   },
 

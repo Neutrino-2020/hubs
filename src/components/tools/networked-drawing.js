@@ -816,7 +816,7 @@ AFRAME.registerComponent("deserialize-drawing-button", {
           this.targetEl.setAttribute("pinnable", "pinned", false);
         }
         this.targetEl.parentEl.removeChild(this.targetEl);
-        this.el.sceneEl.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_PEN_START_DRAW);
+        // this.el.sceneEl.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_PEN_START_DRAW);
       };
 
       //serialize any existing drawing and clear the drawing.
