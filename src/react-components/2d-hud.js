@@ -284,13 +284,22 @@ class TopHUD extends Component {
             >
               <InlineSVG className={cx(styles.iconButtonIcon)} src={micIcon} />
             </div>
-            <div
+            {/*<div
               className={cx(styles.iconButton, {
                 [styles.disabled]: this.state.mediaDisabled
               })}
               title={`Create${this.state.mediaDisabled ? " Disabled" : ""}`}
               onClick={
                 this.state.mediaDisabled ? noop : () => this.props.mediaSearchStore.sourceNavigateToDefaultSource()
+              }
+            >*/}
+            <div
+              className={cx(styles.iconButton, {
+                [styles.disabled]: true
+              })}
+              title={`Create${true ? " Disabled" : ""}`}
+              onClick={
+                true ? noop : () => this.props.mediaSearchStore.sourceNavigateToDefaultSource()
               }
             >
               <InlineSVG className={cx(styles.iconButtonIcon, styles.spawn)} src={SpawnIcon} />
