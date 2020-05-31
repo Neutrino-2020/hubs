@@ -135,6 +135,18 @@ AFRAME.registerComponent("player-info", {
     if (modBadgeEl) {
       modBadgeEl.object3D.visible = !this.isRecording && this.isOwner && !infoShouldBeHidden;
     }
+
+    // Remove the Hide button
+    const all_text = this.el.querySelectorAll("[text]");
+    for (var a of all_text){
+      // console.log('----------', a.components['text'].attrValue.value);
+      if(a.components['text'].attrValue.value == 'Hide') {
+        // console.log('FOUND ----------', a.components['text'].attrValue.value);
+        // a.setAttribute('visible', false); // only remover label
+        // console.log(a.parentNode);
+        a.parentNode.setAttribute('visible', false);
+      }
+    }
   },
   applyProperties(e) {
     this.applyDisplayName();
