@@ -113,7 +113,7 @@ class InWorldChatBox extends Component {
             }}
             placeholder={this.props.discordBridges.length ? `Send to room and ${discordSnippet}...` : "Send to room..."}
           />
-          {this.props.enableSpawning && (
+          {/*this.props.enableSpawning && (
             <InlineSVGButton
               title={"Create"}
               className={classNames([styles.messageEntrySpawn])}
@@ -127,7 +127,7 @@ class InWorldChatBox extends Component {
                 }
               }}
             />
-          )}
+          )*/}
           <InlineSVGButton
             type="submit"
             title={"Submit"}
