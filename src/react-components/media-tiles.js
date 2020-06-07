@@ -15,6 +15,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { faUsers } from "@fortawesome/free-solid-svg-icons/faUsers";
 import { faStar } from "@fortawesome/free-solid-svg-icons/faStar";
+import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 
 import IfFeature from "./if-feature";
 import styles from "../assets/stylesheets/media-browser.scss";
@@ -24,6 +25,8 @@ import { remixAvatar } from "../utils/avatar-utils";
 import { fetchReticulumAuthenticated } from "../utils/phoenix-utils";
 import { getReticulumFetchUrl } from "../utils/phoenix-utils";
 
+const maxRoomCap = 50;
+
 dayjs.extend(relativeTime);
 
 const PUBLISHER_FOR_ENTRY_TYPE = {
@@ -31,6 +34,222 @@ const PUBLISHER_FOR_ENTRY_TYPE = {
   poly_model: "Google Poly",
   twitch_stream: "Twitch"
 };
+
+export function groupFeaturedRooms(featuredRooms) {
+  if (!featuredRooms) {
+    return [];
+  }
+
+  let groups = [];
+
+  for (const room of featuredRooms) {
+    const parts = room.name.split(" | ");
+
+    if (parts.length === 2) {
+      const [groupName, roomName] = parts;
+
+      let group = groups.find(g => g.name === groupName);
+
+      if (group) {
+        group.rooms.push({ ...room, name: roomName });
+      } else {
+        groups.push({
+          name: groupName,
+          rooms: [{ ...room, name: roomName }],
+          user_data: room.user_data
+        });
+      }
+    } else {
+      groups.push({
+        name: room.name,
+        rooms: [room],
+        user_data: room.user_data
+      });
+    }
+  }
+
+  // console.log('groups', groups);
+  groups = groups.sort((a, b) => a.name.localeCompare(b.name))
+  // groups = groups.sort((a, b) => {
+  //   if (a.user_data && a.user_data.group_order !== undefined && b.user_data && b.user_data.group_order !== undefined) {
+  //     return a.user_data.group_order - b.user_data.group_order;
+  //   }
+
+  //   if (a.user_data && a.user_data.group_order !== undefined) {
+  //     return -1;
+  //   }
+
+  //   if (b.user_data && b.user_data.group_order !== undefined) {
+  //     return 1;
+  //   }
+
+  //   return 0;
+  // });
+
+  for (const group of groups) {
+    // console.log(' - room', group);
+    // Sort alphabetically
+    group.rooms = group.rooms.sort((a, b) => a.name.localeCompare(b.name))
+    // group.rooms = group.rooms.sort((a, b) => {
+    //   if (a.user_data && a.user_data.room_order !== undefined && b.user_data && b.user_data.room_order !== undefined) {
+    //     return a.user_data.room_order - b.user_data.room_order;
+    //   }
+
+    //   if (a.user_data && a.user_data.room_order !== undefined) {
+    //     return -1;
+    //   }
+
+    //   if (b.user_data && b.user_data.room_order !== undefined) {
+    //     return 1;
+    //   }
+
+    //   return 0;
+    // });
+
+    const mainRoom = group.rooms[0];
+    group.description = mainRoom.description;
+    group.thumbnail = mainRoom.images && mainRoom.images.preview && mainRoom.images.preview.url;
+  }
+
+  return groups;
+}
+
+export function makeSlug(name) {
+  let slug = name.toLowerCase();
+
+  // Remove non-word characters
+  slug = slug.replace(/[^a-z0-9\s-_]/gi, "");
+
+  // Reduce to single whitespace
+  slug = slug.replace(/[\s-]+/g, " ");
+
+  // Replace whitespace and underscores with dashes
+  slug = slug.replace(/[\s_]+/g, "-");
+
+  return slug;
+}
+
+class ConferenceRoomGroup extends Component {
+  static propTypes = {
+    group: PropTypes.object
+  };
+
+  constructor(props) {
+    super(props);
+
+    const groupName = props.group.name;
+
+    let open = true;
+
+    if (groupName.startsWith("Track ") || groupName.startsWith("Three Conference Streams")) {
+      open = false;
+    }
+
+    this.state = {
+      id: makeSlug(groupName),
+      open
+    };
+  }
+
+  showMore = e => {
+    e.preventDefault();
+    this.setState({ open: true });
+  };
+
+  render() {
+    const { group } = this.props;
+
+    let rooms;
+
+    if (this.state.open) {
+      rooms = group.rooms;
+    } else {
+      rooms = [];
+      let emptyRooms = 0;
+
+      for (let i = 0; i < group.rooms.length; i++) {
+        const room = group.rooms[i];
+
+        if (room.member_count > 0) {
+          rooms.push(room);
+        } else if (emptyRooms < 3) {
+          rooms.push(room);
+          emptyRooms++;
+        }
+      }
+    }
+
+    return (
+      <div id={this.state.id} className={classNames(styles.card, styles.conferenceRoomGroup)}>
+        <div className={styles.groupLeft}>
+          <h2>
+            {group.name}
+            <a href={"#" + this.state.id} className={styles.groupLink}>
+              <FontAwesomeIcon icon={faLink} />
+            </a>
+          </h2>
+          {group.description && <p>{group.description}</p>}
+          <ul className={styles.roomList}>
+            {rooms.map(room => <RoomItem key={room.id} room={room} />)}
+            {!this.state.open &&
+              rooms.length !== group.rooms.length && (
+                <li key="show-more">
+                  <a href="#" onClick={this.showMore}>
+                    Show more...
+                  </a>
+                </li>
+              )}
+          </ul>
+        </div>
+        <div className={styles.groupRight}>
+          <img alt={group.name} src={group.thumbnail} />
+        </div>
+      </div>
+    );
+  }
+}
+
+function RoomItem({ room }) {
+  let canSpectate = true;
+  let canJoin = true;
+  console.log('room', room);
+
+  if (room.member_count + room.lobby_count >= maxRoomCap) {
+    canSpectate = false;
+  }
+
+  if (room.member_count >= room.room_size) {
+    canJoin = false;
+  }
+
+  return (
+    <li key={room.id}>
+      <p className={styles.roomTitle}>{room.name}</p>
+      <span>
+        <FontAwesomeIcon icon={faUsers} />
+        <b>{`${room.member_count} / ${room.room_size}`}</b>
+        {canSpectate ? (
+          <a className={classNames(styles.joinButton)} href={room.url}>
+            {canJoin ? "Join" : "Spectate"}
+          </a>
+        ) : (
+          <p className={classNames(styles.joinButton, styles.joinButtonDisabled)}>Full</p>
+        )}
+      </span>
+    </li>
+  );
+}
+
+function Spinner() {
+  return (
+    <div className="loader-wrap loader-mid">
+      <div className="loader">
+        <div className="loader-center" />
+      </div>
+    </div>
+  );
+}
+
 
 class MediaTiles extends Component {
   static propTypes = {
@@ -65,9 +284,18 @@ class MediaTiles extends Component {
   };
 
   render() {
+    const { publicRooms, favoritedRooms } = this.props;
     const { urlSource, hasNext, hasPrevious, page, isVariableWidth } = this.props;
     const entries = this.props.entries || [];
     const [createTileWidth, createTileHeight] = this.getTileDimensions(false, urlSource === "avatars");
+    console.log('entries', entries);
+
+    const imageSrc = entries[0].images.preview.url;
+    const [imageWidth, imageHeight] = this.getTileDimensions(true, false,  entries[0].images.preview.width / entries[0].images.preview.height);
+
+    console.log('publicRooms', publicRooms);
+    console.log('favoritedRooms', favoritedRooms);
+    const groupedEntries = groupFeaturedRooms(entries);
 
     return (
       <div className={styles.body}>
@@ -107,7 +335,57 @@ class MediaTiles extends Component {
             </div>
           )}
 
-          {entries.map(this.entryToTile)}
+          {/*entries.map(this.entryToTile)*/}
+
+          <div className={styles.contentContainer}>
+            {/*<div className={styles.centered} id="virtual-rooms">
+              <h1>Virtual Rooms</h1>
+            </div>*/}
+            {groupedEntries.length > 0 ? (
+                   groupedEntries.map(group => <ConferenceRoomGroup key={group.name} group={group} />)
+                 ) : (
+                   <div className={styles.spinnerContainer}>
+                     <Spinner />
+                   </div>
+                 )}
+            {/*<div className={classNames(styles.card, styles.conferenceRoomGroup)}>
+              <div className={styles.groupLeft}>
+                <h2 id="">
+                  Test
+                  <a href={"#"} className={styles.groupLink}>
+                    <FontAwesomeIcon icon={faLink} />
+                  </a>
+                </h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <ul className={styles.roomList}>
+                  {entries.map(entry => <RoomItem room={entry} />)}
+                </ul>
+              </div>
+              <div className={styles.groupRight}>
+                <img alt='Alt' src={scaledThumbnailUrlFor(imageSrc, imageWidth, imageHeight)} />
+              </div>
+            </div>
+            <button
+              className={classNames(styles.joinButton, styles.createRoomButton)}
+              onClick={e => {
+                e.preventDefault();
+                createAndRedirectToNewHub(null, null, false);
+              }}
+            >
+              Create Room
+            </button>*/}
+          </div>
+
+
+
+
+
+
         </div>
 
         {(hasNext || hasPrevious) &&
@@ -311,7 +589,7 @@ class MediaTiles extends Component {
                 </div>
                 <div className={styles.presence}>
                   <FontAwesomeIcon icon={faUsers} />
-                  <span>{entry.member_count}/40</span>
+                  <span>{entry.member_count}/{entry.room_size}</span>
                 </div>
               </>
             )}
