@@ -17,6 +17,8 @@ AFRAME.registerComponent("open-media-button", {
 
       this.el.object3D.visible = !!visible;
 
+      // console.log('src', src);
+
       if (visible) {
         let label = "open link";
         if (!this.data.onlyOpenLink) {
@@ -26,6 +28,12 @@ AFRAME.registerComponent("open-media-button", {
             label = "use scene";
           } else if (await isHubsRoomUrl(src)) {
             label = "visit room";
+            if (src.includes("/room_links/")) {
+              // var room_number = src.substr(src.lastIndexOf("to_room_"),  src.lastIndexOf(".html"));
+              var room_number = src.match(/\d+/g).slice(-1)[0];
+              label = "visit room " + room_number;
+              // console.log('********************************************* room_number', room_number, '     label', label);
+            }
           }
         }
         this.label.setAttribute("text", "value", label);

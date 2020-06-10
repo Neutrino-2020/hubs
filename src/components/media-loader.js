@@ -25,6 +25,8 @@ import { waitForDOMContentLoaded } from "../utils/async-utils";
 
 import { SHAPE } from "three-ammo/constants";
 
+import link_to_room from "./link_to_room.json";
+
 let loadingObjectEnvMap;
 let loadingObject;
 
@@ -372,7 +374,16 @@ AFRAME.registerComponent("media-loader", {
       if (this.data.resolve && !src.startsWith("data:") && !src.startsWith("hubs:") && !isLocalModelAsset) {
         const is360 = !!(this.data.mediaOptions.projection && this.data.mediaOptions.projection.startsWith("360"));
         const quality = getDefaultResolveQuality(is360);
-        const result = await resolveUrl(src, quality, version, forceLocalRefresh);
+
+        var this_src = src;
+        if (src.includes("/room_links/")) {
+          var room_number = src.match(/\d+/g).slice(-1)[0];
+          var link = link_to_room.filter(function(item) { return item.room_number === room_number; })[0].link;
+          this_src = link;
+        }
+
+        const result = await resolveUrl(this_src, quality, version, forceLocalRefresh);
+
         canonicalUrl = result.origin;
 
         // handle protocol relative urls
@@ -581,6 +592,7 @@ AFRAME.registerComponent("media-loader", {
                 template: "#hubs-destination-hover-menu",
                 isFlat: true
               });
+              // console.log('isHubsRoomUrl----------------------------------------');
             } else {
               this.el.setAttribute("hover-menu__link", { template: "#link-hover-menu", isFlat: true });
             }
@@ -593,6 +605,18 @@ AFRAME.registerComponent("media-loader", {
         if (this.data.mediaOptions.hasOwnProperty("batch") && !this.data.mediaOptions.batch) {
           batch = false;
         }
+        // console.log('setting media-image, src', thumbnail);
+        // console.log('setting media-image, this.data.mediaOptions', this.data.mediaOptions);
+        // console.log('setting media-image, version', version);
+        // console.log('setting media-image, guessContentType(thumbnail)', guessContentType(thumbnail));
+        // console.log('setting media-image, batch', batch);
+        // if ((await isHubsRoomUrl(src)) && src.includes("/room_links/")) {
+        //   thumbnail = "https://nu2020-data.s3.amazonaws.com/room_links/img_room_1.jpg";
+        //   thumbnail = "https://nu2020-hubs-assets.nu2020-hubs.org/files/2224ae1a-c3d4-4518-816e-9255884e0971.jpg";
+        //   thumbnail = "./room_thumbnails/to_room_1.jpg";
+        //   console.log('----------------------------------------------------------------------------------', thumbnail);
+        //   // thumbnail = src.substr(0, src.lastIndexOf(".")) + ".jpg";
+        // }
         this.el.setAttribute(
           "media-image",
           Object.assign({}, this.data.mediaOptions, {
