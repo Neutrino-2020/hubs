@@ -141,11 +141,8 @@ function HubsCloudPage() {
                   poster session, which main goal is to facilitate the interaction among all conference
                   partecipants, and to give everyone the oppurtinity to share their own work.
                   In an effort to keep the same spirit, we are hosting a virtual reality (VR) poster session,
-                  using a customized version of <a href="https://hubs.mozilla.com/#/">Mozilla Hubs</a>.
-                  Hubs is a social VR platform that runs right in the browser.
-                  Conference participants can access Hubs rooms by clicking the button below and logging in
-                  with the email address they used to register for the conference on the Indico site.
-                  This webpage contains additional information to improve your Hubs experience.
+                  using a customized version of <a href="https://hubs.mozilla.com/#/">Mozilla Hubs</a>:
+                  a social VR platform that runs right in the browser.
                 </p>
                 <div className={classNames(styles.row, styles.colLg, styles.centerLg)}>
                   <a className={styles.primaryButton} href="/">
@@ -169,20 +166,17 @@ function HubsCloudPage() {
             </ul>
             <h2>2. Enter a Room</h2>
             <p>
-              We recommend using Mozilla Firefox. Hubs works best in Firefox and Chrome, but it also runs on Edge, and desktop Safari.<br></br>
-              The poster session is spread over several virtual rooms.<br></br>
+              Make sure you are using Mozilla Firefox (Hubs works best in Firefox but also works on Chrome, Safari and Edge.<br></br>
+              Also make sure you are using wired heaphones (Hubs doesn't work properly without them!).<br></br>
               You can see all the available rooms in the <a href="/">main page</a>.<br></br>
-              There is a maximum of 40 partecipants per room.<br></br>
-              You can see the number of partecipants in the small icon at the bottom right of every room.<br></br>
+              There is a maximum number of partecipants per room.<br></br>
+              The poster session is spread rtecipants in the small icon at the bottom right of every room.<br></br>
               To enter a room, simply pick one which is not full and click on it.<br></br>
             </p>
             <p>
               Before entering, you are in the room's lobby.<br></br>
               You can see what's going on inside the room but you can't interact.<br></br>
-              Entering the room can be a bit different depending on the type of device you are using.<br></br>
               Click "Enter Room" and follow the prompts to select an avatar and enable the mic.<br></br>
-              Make sure you are using headphone and that you select the proper mic when asked to do so.<br></br>
-              Before entering the room, make sure you test your mic and speaker as shown in the picture.<br></br>
             </p>
           </section>
           <div className={styles.herow}>
@@ -204,14 +198,14 @@ function HubsCloudPage() {
           <section className={styles.left}>
             <h2>3. Explore</h2>
             <h3>Look Around</h3>
-            Try exploring your new space. On desktop use your <b>WASD</b> keys to move around, or use your right mouse button to jump. Rotate your view using the <b>Q</b> and <b>E</b> keys, or hold down your left mouse button and drag.
-            For VR and mobile controls see our list of <a href="https://hubs.mozilla.com/docs/hubs-controls">Hubs controls</a>.
+            Now that you are in the room, you can start exploring. Use your <b>WASD</b> keys to move around, or use your right mouse button to jump. To rotate your view, hold down your left mouse button and drag (alternatively you can use the <b>Q</b> and <b>E</b> keys).
+            For VR and mobile controls see the list on the <a href="https://hubs.mozilla.com/docs/hubs-controls.html">Mozilla Hubs page</a>.
             <h3>User Interface</h3>
           </section>
           <div className={styles.herow}>
             <section className={styles.colLg}>
               <div className={classNames(styles.heroMedia, styles.centerLg)}>
-                <img src="./assets/docs/hubs-user-interface.png" alt="UI"/>
+                <img src="./assets/docs/nu2020-hubs-ui.png" alt="UI"/>
               </div>
               <div className={styles.heroContent}>
                 <p className={styles.centerLg}>
@@ -221,7 +215,38 @@ function HubsCloudPage() {
             </section>
           </div>
           <section className={styles.left}>
-            <h2 id="troubleshooting">Troubleshooting</h2>
+            <h3>Object Menus</h3>
+            Additional controls for objects, videos, and drawings can be found in the object menu.
+            To reveal these controls, hover your cursor over the object and press the <b>space bar</b> or <b>tab key</b> on Desktop.
+          </section>
+          <div className={styles.herow}>
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="./assets/docs/nu2020-hubs-ui-openposter.png" alt="UI"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  Click <b>space bar</b> while pointing at a poster to show the poster menu.
+                  If you click on "open link" it will open the poster on a new tab.
+                </p>
+              </div>
+            </section>
+          </div>
+          <div className={styles.herow}>
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="./assets/docs/nu2020-hubs-ui-link.png" alt="UI"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  The widget below the poster number if a link. If you click on "open" link it will open a new tab showing
+                  the poster session main page, where you can see the poster in full resolution and watch the video.
+                </p>
+              </div>
+            </section>
+          </div>
+          <section className={styles.left}>
+            <h1 id="troubleshooting">Troubleshooting</h1>
             Having problems? Belowe we have collected some of the typical issues that may encounter.<br/>
             Some simple tips:
             <ul>
