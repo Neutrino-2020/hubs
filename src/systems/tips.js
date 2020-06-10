@@ -30,19 +30,19 @@ const TIPS = {
       "look",
       "locomotion",
       "turning",
-      "spawn_menu",
-      "object_grab",
-      "object_zoom",
-      "object_scale",
-      "freeze_gesture",
+      // "spawn_menu",
+      // "object_grab",
+      // "object_zoom",
+      // "object_scale",
+      // "freeze_gesture",
       "menu_hover",
       "object_rotate_button",
       "object_scale_button",
-      "object_pin",
+      // "object_pin",
       "invite",
       "pen_color",
       "pen_size",
-      "feedback"
+      // "feedback"
     ]
   },
   mobile: {
@@ -50,14 +50,14 @@ const TIPS = {
     bottom: [
       "look",
       "locomotion",
-      "spawn_menu",
-      "object_grab",
-      "freeze_gesture",
+      // "spawn_menu",
+      // "object_grab",
+      // "freeze_gesture",
       "object_rotate_button",
       "object_scale_button",
-      "object_pin",
+      // "object_pin",
       "invite",
-      "feedback"
+      // "feedback"
     ]
   },
   standalone: { top: [], bottom: [] }
