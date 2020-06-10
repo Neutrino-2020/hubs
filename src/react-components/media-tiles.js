@@ -212,7 +212,7 @@ class ConferenceRoomGroup extends Component {
 function RoomItem({ room }) {
   let canSpectate = true;
   let canJoin = true;
-  console.log('room', room);
+  // console.log('room', room);
 
   if (room.member_count + room.lobby_count >= maxRoomCap) {
     canSpectate = false;
@@ -290,11 +290,16 @@ class MediaTiles extends Component {
     const [createTileWidth, createTileHeight] = this.getTileDimensions(false, urlSource === "avatars");
     console.log('entries', entries);
 
-    const imageSrc = entries[0].images.preview.url;
-    const [imageWidth, imageHeight] = this.getTileDimensions(true, false,  entries[0].images.preview.width / entries[0].images.preview.height);
-
-    console.log('publicRooms', publicRooms);
-    console.log('favoritedRooms', favoritedRooms);
+    var is_room = false;
+    if (entries.length > 0) {
+      if (entries[0].type == "room") {
+        is_room = true;
+      }
+    }
+    // console.log('publicRooms', publicRooms);
+    // console.log('favoritedRooms', favoritedRooms);
+    // console.log('entries.length ', entries.length );
+    // console.log('is_room', is_room);
     const groupedEntries = groupFeaturedRooms(entries);
 
     return (
@@ -335,7 +340,8 @@ class MediaTiles extends Component {
             </div>
           )}
 
-          {/*entries.map(this.entryToTile)*/}
+          {!is_room ? (
+            entries.map(this.entryToTile) ) : (
 
           <div className={styles.contentContainer}>
             {/*<div className={styles.centered} id="virtual-rooms">
@@ -380,6 +386,7 @@ class MediaTiles extends Component {
               Create Room
             </button>*/}
           </div>
+          )}
 
 
 
