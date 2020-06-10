@@ -1038,8 +1038,8 @@ class UIRoot extends Component {
           )}
           {!["left", "disconnected", "scene_error"].includes(this.props.roomUnavailableReason) && (
             <div>
-              You can also <a href="/">create a new room</a>
-              .
+              Also, make sure you are using Mozilla Firefox.
+              If the problem persists, visit the <a href="https://nu2020-hubs.org/cloud#troubleshooting">troubleshooting page</a>.
             </div>
           )}
         </div>
