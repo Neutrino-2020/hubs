@@ -433,7 +433,12 @@ class HomeRoot extends Component {
       <div className={styles.heroPanel} key={1}>
         <h2> Welcome to the Neutrino 2020 Poster Session! </h2>
         <h3> Select one of the rooms below to get started. </h3>
-        <p>  </p>
+        <p> Remeber to:
+        <ul>
+          <li>Use Mozilla Firefox.</li>
+          <li>Use wired headphones.</li>
+        </ul>
+        </p>
       </div>,
       <div className={styles.ctaButtons}>
         {this.renderInstructionsButton()}
