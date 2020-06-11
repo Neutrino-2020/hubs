@@ -65,7 +65,7 @@ class InWorldChatBox extends Component {
               }
             }}
           />
-          {this.props.enableSpawning && (
+          {/*this.props.enableSpawning && (
             <label
               htmlFor="message-entry-media-input"
               title={"Upload"}
@@ -79,7 +79,7 @@ class InWorldChatBox extends Component {
                 <FontAwesomeIcon icon={isMobile ? faCamera : faPlus} />
               </i>
             </label>
-          )}
+          )*/}
           <textarea
             style={{ height: pendingMessageTextareaHeight }}
             className={classNames([
