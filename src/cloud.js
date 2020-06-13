@@ -288,7 +288,8 @@ function HubsCloudPage() {
             If the mic is picking up your voice but it sounds distorted, check you aren't using a bluetooth headset mic, as these do not always work well with browser-based tools.
 
             <h3>Need help with something else?</h3>
-              You can ask in the Nu2020 Slack channel #nu2020-hubs.<br/>
+              Send us an email at <a href="mailto:nu2020-hubs@listserv.fnal.gov?subject=Nu2020 Hubs Support Request&body=Please also specify what OS, computer, and browser you were using.">nu2020-hubs@listserv.fnal.gov</a>.<br/>
+              Or you can ask in the Nu2020 Slack channel #nu2020-hubs.<br/>
               Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.
           </section>
 
