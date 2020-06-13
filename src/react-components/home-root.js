@@ -435,10 +435,12 @@ class HomeRoot extends Component {
         <h3> Select one of the rooms below to get started. </h3>
         <p> Remeber to:
         <ul>
-          <li>Use Mozilla Firefox.</li>
-          <li>Use wired headphones.</li>
+          <li>Use Mozilla Firefox if you can.</li>
+          <li>Use headphones.</li>
         </ul>
         </p>
+        {/*<h2>Beta Test: The beta test has ended.</h2>*/}
+        {/*<h2>Nu2020 Rehearsal: Visit Room 2 or Room 3 below.</h2>*/}
       </div>,
       <div className={styles.ctaButtons}>
         {this.renderInstructionsButton()}
