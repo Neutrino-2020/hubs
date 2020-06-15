@@ -81,16 +81,62 @@ window.addEventListener("beforeinstallprompt", e => {
 
 // Fetch favorite + public rooms and merge, sorting by member count
 async function fetchFeaturedRooms() {
-  const [favoriteRoomsResult, publicRoomsResult] = await Promise.all([
-    authChannel.signedIn
-      ? fetchReticulumAuthenticated(
-          `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
-        )
-      : Promise.resolve({ entries: [] }),
-    fetchReticulumAuthenticated("/api/v1/media/search?source=rooms&filter=public")
-  ]);
+  // const [favoriteRoomsResult, publicRoomsResult] = await Promise.all([
+  //   authChannel.signedIn
+  //     ? fetchReticulumAuthenticated(
+  //         `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
+  //       )
+  //     : Promise.resolve({ entries: [] }),
+  //   fetchReticulumAuthenticated("/api/v1/media/search?source=rooms&filter=public")
+  // ]);
 
-  const entries = [...publicRoomsResult.entries, ...favoriteRoomsResult.entries];
+  // const favoriteRoomsResult = await (authChannel.signedIn
+  //     ? fetchReticulumAuthenticated(
+  //         `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
+  //       )
+  //     : Promise.resolve({ entries: [] });
+
+  let favoriteRoomsResult = null;
+  let publicRoomsResult = null;
+
+  if (!authChannel.signedIn) {
+    favoriteRoomsResult = [];
+  } else {
+    favoriteRoomsResult = await fetchReticulumAuthenticated(
+    `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
+  );
+  }
+
+
+
+  let hasMore = true;
+  const publicResults = [];
+  const queryParams = new URLSearchParams();
+  queryParams.set("source", "rooms");
+  queryParams.set("filter", "public");
+
+  while (hasMore) {
+    const res = await fetchReticulumAuthenticated(`/api/v1/media/search?${queryParams}`);
+    // console.log('in hasMore loop - res', res);
+
+    for (const entry of res.entries) {
+      if (!publicResults.find(item => item.id === entry.id)) {
+        publicResults.push(entry);
+      } else {
+        console.log(`Duplicate page: ${queryParams.get("cursor")} id: ${entry.id}`);
+      }
+    }
+
+    queryParams.set("cursor", res.meta.next_cursor);
+    hasMore = !!res.meta.next_cursor;
+  }
+
+  // publicRoomsResult = publicResults;
+
+  // console.log('publicRoomsResult.entries', publicResults);
+  // console.log('favoriteRoomsResult.entries', favoriteRoomsResult.entries);
+
+  const entries = [...publicResults, ...favoriteRoomsResult.entries];
   const ids = entries.map(h => h.id);
   featuredRooms = entries.filter((h, i) => ids.lastIndexOf(h.id) === i).sort((a, b) => b.member_count - a.member_count);
   remountUI();

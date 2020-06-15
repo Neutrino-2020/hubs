@@ -145,6 +145,9 @@ export function fetchReticulumAuthenticated(url, method = "GET", payload) {
   if (payload) {
     params.body = JSON.stringify(payload);
   }
+  // console.log('calling fetch with retUrl', retUrl);
+  // console.log('calling fetch with params', params);
+
   return fetch(retUrl, params).then(async r => {
     const result = await r.text();
     try {
