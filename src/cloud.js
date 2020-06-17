@@ -170,7 +170,8 @@ function HubsCloudPage() {
               Also make sure you are using wired heaphones (Hubs doesn't work properly without them!).<br></br>
               You can see all the available rooms in the <a href="/">main page</a>.<br></br>
               There is a maximum number of partecipants per room.<br></br>
-              The poster session is spread rtecipants in the small icon at the bottom right of every room.<br></br>
+              The poster session is spread over several room. Each room contains 5 posters each.<br></br>
+              The number of partecipants in a room is limited, and you can see the room occupancy in the <a href="/">main page</a>.<br></br>
               To enter a room, simply pick one which is not full and click on it.<br></br>
             </p>
             <p>
@@ -289,7 +290,7 @@ function HubsCloudPage() {
 
             <h3>Need help with something else?</h3>
               Send us an email at <a href="mailto:nu2020-hubs@listserv.fnal.gov?subject=Nu2020 Hubs Support Request&body=Please also specify what OS, computer, and browser you were using.">nu2020-hubs@listserv.fnal.gov</a>.<br/>
-              Or you can ask in the Nu2020 Slack channel #nu2020-hubs.<br/>
+              Or you can ask in the Nu2020 Slack channel #virtual-reality.<br/>
               Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.
           </section>
 
