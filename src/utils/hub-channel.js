@@ -76,7 +76,7 @@ export default class HubChannel extends EventTarget {
 
     for(var i = 0; i < permissions.length; i++) {
       var obj = permissions[i];
-      console.log('User', obj.RoomID, obj.Name);
+      // console.log('User', obj.RoomID, obj.Name);
       if (hub.hub_id == obj.RoomID && user_profile.identityName == obj.Name) {
         console.log('Letting poster presenter in by default.', hub.hub_id, user_profile.identityName);
         return true;

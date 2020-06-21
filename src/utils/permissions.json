@@ -1,3 +1,607 @@
-[{"FriendlyName": "Room 1", "RoomID": "beZirYW", "Name": "Marco Del Tutto (FNAL)"},
-{"FriendlyName": "Room 1", "RoomID": "Fw4gr8g", "Name": "Test Named"},
-{"FriendlyName": "Room 2", "RoomID": "shdkjdio", "Name": "Test Name"}]
+[
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "7kSZZMF",
+        "Name": "Avinay Bhat"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "7kSZZMF",
+        "Name": "Joao Paulo Pinheiro"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "7kSZZMF",
+        "Name": "Chris Rogers"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "7kSZZMF",
+        "Name": "Vincent CECCHINI"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6zbjXZi",
+        "Name": "Yufeng Li"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6zbjXZi",
+        "Name": "Jaydeep Datta"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6zbjXZi",
+        "Name": "Jun Terasaki"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6zbjXZi",
+        "Name": "Jacob Zettlemoyer"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "yuiXq8a",
+        "Name": "Ajib Paudel"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "yuiXq8a",
+        "Name": "Jinjing Li"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "yuiXq8a",
+        "Name": "Guillaume Pronost"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "yuiXq8a",
+        "Name": "Reyco Henning"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "yuiXq8a",
+        "Name": "Raymond Tsang"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6JT2f3c",
+        "Name": "Ivan Lepetic"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6JT2f3c",
+        "Name": "Alec Lindman"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6JT2f3c",
+        "Name": "Daine Danielson"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6JT2f3c",
+        "Name": "Yang HAN"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6JT2f3c",
+        "Name": "David Lhuillier"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "HucbEqb",
+        "Name": "Gulden Othman"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "HucbEqb",
+        "Name": "Rudolf Sack"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "HucbEqb",
+        "Name": "Kathryn Sutton"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "HucbEqb",
+        "Name": "Nicol\u00f2 Foppiani"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "j9Utzds",
+        "Name": "Darius Jurciukonis"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "j9Utzds",
+        "Name": "Rudolph Rogly"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "j9Utzds",
+        "Name": "Jonathan Haefner"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "j9Utzds",
+        "Name": "Yoshikazu Nagai"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "j9Utzds",
+        "Name": "Yue Meng"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "iigDBzo",
+        "Name": "Maria Prado Rodriguez"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "iigDBzo",
+        "Name": "Mathieu Lamoureux"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "iigDBzo",
+        "Name": "Sarah Mancina"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "iigDBzo",
+        "Name": "Lauren Yates"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "iigDBzo",
+        "Name": "Grzegorz Zarnecki"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "3vYYSX8",
+        "Name": "Bakhtiyar Iskakov"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "3vYYSX8",
+        "Name": "Yongsoo Jho"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "3vYYSX8",
+        "Name": "Shirley Li"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "3vYYSX8",
+        "Name": "Nilay Bostan"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "3vYYSX8",
+        "Name": "Marianette Wospakrik"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "o3AwFTn",
+        "Name": "Kevin Wood"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "o3AwFTn",
+        "Name": "Long Li"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "o3AwFTn",
+        "Name": "Alexander Goldsack"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "o3AwFTn",
+        "Name": "Christopher Hilgenberg"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "o3AwFTn",
+        "Name": "Tyler Boone"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "xtmdNko",
+        "Name": "Ricardo Cepedello"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "xtmdNko",
+        "Name": "Barbara Yaeggy"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "xtmdNko",
+        "Name": "Marta Colomer Molla"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "xtmdNko",
+        "Name": "Guang Yang"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "xtmdNko",
+        "Name": "Christopher Haufe"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "rmdvHjy",
+        "Name": "Andreas Gaertner"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "rmdvHjy",
+        "Name": "Eric Howard"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "rmdvHjy",
+        "Name": "Antonio Branca"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "rmdvHjy",
+        "Name": "Andrey Romanov"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "rmdvHjy",
+        "Name": "Joshua Porter"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "tteqqxB/",
+        "Name": "Mauricio Bustamante"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "tteqqxB/",
+        "Name": "Brenda Aurea Cervantes Vergara"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "tteqqxB/",
+        "Name": "Laura Zambelli"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "tteqqxB/",
+        "Name": "Etienne Chardonnet"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "x3hAHa5",
+        "Name": "James Cline"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "x3hAHa5",
+        "Name": "Massimiliano Lincetto"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "x3hAHa5",
+        "Name": "Cheryl Patrick"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "x3hAHa5",
+        "Name": "Michael Wallbank"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "x3hAHa5",
+        "Name": "Thomas Sonley"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "pMdr97L",
+        "Name": "Arina Telles"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "pMdr97L",
+        "Name": "Andrew Chappell"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "pMdr97L",
+        "Name": "Manuela Mallamaci"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "pMdr97L",
+        "Name": "Robert Stein"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "KwDydZQ",
+        "Name": "Yota Hino"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "KwDydZQ",
+        "Name": "Richard Naab"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "KwDydZQ",
+        "Name": "Luigi Antonio Fusco"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "KwDydZQ",
+        "Name": "Eric Marzec"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "d3QLTp7",
+        "Name": "Kevin Kelly"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "d3QLTp7",
+        "Name": "Xiangpan Ji"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "d3QLTp7",
+        "Name": "Priyank Parashari"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "d3QLTp7",
+        "Name": "Dounia Helis"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "d3QLTp7",
+        "Name": "Caio Licciardi"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "RBVHFgp",
+        "Name": "Jost Migenda"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "RBVHFgp",
+        "Name": "Dmitriy Semenov"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "RBVHFgp",
+        "Name": "Andrea Gallo Rosso"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "RBVHFgp",
+        "Name": "Brian Clark"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "RBVHFgp",
+        "Name": "Melissa Medina Peregrina"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "FtRNzyh",
+        "Name": "Adrien Hourlier"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "FtRNzyh",
+        "Name": "Rebecca Rapp"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "FtRNzyh",
+        "Name": "Yang Zhang"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "FtRNzyh",
+        "Name": "Andr\u00e9s Fernando Castillo Ramirez"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "FtRNzyh",
+        "Name": "Young Ju Ko"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "qneZ4ps",
+        "Name": "Jessica Turner"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "qneZ4ps",
+        "Name": "Sumit Ghosh"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "qneZ4ps",
+        "Name": "Maria Brigida Brunetti"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "qneZ4ps",
+        "Name": "Anna Malgorzata Suliga"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "sKyjGRk",
+        "Name": "Ako Jamil"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "sKyjGRk",
+        "Name": "Rong Zhao"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "sKyjGRk",
+        "Name": "Simon De Kockere"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "sKyjGRk",
+        "Name": "Connor Awe"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BL3vTaj",
+        "Name": "Kaeli Hughes"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BL3vTaj",
+        "Name": "Pablo Martinez-Mirav\u00e9"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BL3vTaj",
+        "Name": "Tulasi Subedi"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BL3vTaj",
+        "Name": "Irene Bolognino"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BL3vTaj",
+        "Name": "Benjamin Suh"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "Go4sGjD",
+        "Name": "Matthew Judah"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "Go4sGjD",
+        "Name": "Benjamin Monreal"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "Go4sGjD",
+        "Name": "Gabriela Vitti Stenico"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "Go4sGjD",
+        "Name": "Karla Tellez-Giron-Flores"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "hRuxEpB",
+        "Name": "Bryan Ramson"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "hRuxEpB",
+        "Name": "Ankur Nath"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "hRuxEpB",
+        "Name": "JORGE GARCIA BELLO"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "hRuxEpB",
+        "Name": "Pieter Mumm"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "hRuxEpB",
+        "Name": "Morgan Askins"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BU8gnLC",
+        "Name": "Samuele Sangiorgio"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BU8gnLC",
+        "Name": "Remy Prechelt"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BU8gnLC",
+        "Name": "Jeremy Gaison"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BU8gnLC",
+        "Name": "Abdullah Shehada"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "BU8gnLC",
+        "Name": "Sanjoy Mandal"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "dCEX4do",
+        "Name": "Amina Khatun"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "dCEX4do",
+        "Name": "Anil Kumar"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "dCEX4do",
+        "Name": "Chayan Majumdar"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "dCEX4do",
+        "Name": "Claudio Frederico Pascoal da Silva"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "dCEX4do",
+        "Name": "Fernanda Psihas"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6vE7KXV",
+        "Name": "Artem Popov"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6vE7KXV",
+        "Name": "Andrea Mattera"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6vE7KXV",
+        "Name": "Arun Kumar Soma"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6vE7KXV",
+        "Name": "Yong Du"
+    },
+    {
+        "FriendlyName": "RoomX",
+        "RoomID": "6vE7KXV",
+        "Name": "Matteo Tenti"
+    }
+]
