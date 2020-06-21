@@ -1207,6 +1207,15 @@ class UIRoot extends Component {
                   <FormattedMessage id="entry.entry-disallowed-subtitle" />
                 </div>
               </a>
+              <a
+                href="/"
+                className={classNames([entryStyles.secondaryActionButton, entryStyles.wideButton])}
+              >
+                <FormattedMessage id="Check other Rooms" />
+                <div className={entryStyles.buttonSubtitle}>
+                  <FormattedMessage id="Other rooms may be available" />
+                </div>
+              </a>
             </div>
           )}
         {this.state.waitingOnAudio && (
