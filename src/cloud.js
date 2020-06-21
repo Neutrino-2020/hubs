@@ -156,6 +156,10 @@ function HubsCloudPage() {
             </section>
           </div>
           <section className={styles.left}>
+            {/*<a href="https://www.youtube.com/watch?v=jG3Vms5jS8Y" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/docs/vr_video.jpg" alt="Audio Setup" width="400"/>
+            </a>*/}
+            <h4>Check out the virtual reality tutorial video <a href="https://www.youtube.com/watch?v=jG3Vms5jS8Y">here</a>!</h4>
             <h2>1. Log In</h2>
             You will only be able to enter a virtual room if you are logged in. To log in:
             <ul>
@@ -289,9 +293,9 @@ function HubsCloudPage() {
             If the mic is picking up your voice but it sounds distorted, check you aren't using a bluetooth headset mic, as these do not always work well with browser-based tools.
 
             <h3>Need help with something else?</h3>
-              Send us an email at <a href="mailto:nu2020-hubs@listserv.fnal.gov?subject=Nu2020 Hubs Support Request&body=Please also specify what OS, computer, and browser you were using.">nu2020-hubs@listserv.fnal.gov</a>.<br/>
-              Or you can ask in the Nu2020 Slack channel #virtual-reality.<br/>
-              Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.
+              To get feedback fast, please ask us in the Nu2020 Slack channel #virtual-reality.<br/>
+              Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.<br/>
+              Alternatively, you can send us an email at <a href="mailto:nu2020-hubs@fnal.gov?body=[Please specify what OS, computer, and browser you were using.]">nu2020-hubs@fnal.gov</a>.
           </section>
 
           {/*<section className={classNames(styles.features, styles.colLg, styles.centerLg)}>

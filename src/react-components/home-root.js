@@ -214,6 +214,11 @@ class HomeRoot extends Component {
                       <FormattedMessage id="Instructions" />
                     </a>
                   </IfFeature>
+                  <IfFeature name="show_community_link">
+                    <a href="/cloud#troubleshooting" rel="noreferrer noopener">
+                      <FormattedMessage id="Help" />
+                    </a>
+                  </IfFeature>
                   {this.props.showAdmin && (
                     <a href="/admin" rel="noreferrer noopener">
                       <i>
@@ -399,7 +404,7 @@ class HomeRoot extends Component {
 
   renderPosterListButton() {
     return (
-      <a href="https://nusoft.fnal.gov/nova/users/habig/webtemp/Nu2020PosterWeb/" rel="noreferrer noopener">
+      <a href="https://nusoft.fnal.gov/nova/nu2020postersession/" rel="noreferrer noopener">
         <button
           className={classNames(styles.primaryButton, styles.ctaButton)}
         >
@@ -431,19 +436,29 @@ class HomeRoot extends Component {
         </div>
       </div>,
       <div className={styles.heroPanel} key={1}>
-        <h2> Welcome to the Neutrino 2020 Poster Session! </h2>
+        <h2> Welcome to the Neutrino 2020 Virtual Reality Platform! </h2>
         <h3> Select one of the rooms below to get started. </h3>
-        <p> Remeber to:
+        <p> <b>Remember to:
         <ul>
           <li>Use Mozilla Firefox if you can.</li>
           <li>Use headphones.</li>
-        </ul>
+        </ul></b>
+        <a href="/cloud#troubleshooting">Problems? Check the troubleshooting page.</a>
         </p>
         {/*<h2>Beta Test: The beta test has ended.</h2>*/}
         {/*<h2>Nu2020 Rehearsal: Visit Room 2 or Room 3 below.</h2>*/}
       </div>,
       <div className={styles.ctaButtons}>
         {this.renderInstructionsButton()}
+      </div>,
+      <div className={styles.indexButtons}>
+        <ul>
+          <li><a href="#0-test-rooms">Test Rooms</a></li>
+          <li><a href="#1-poster-session-1">Poster Session</a></li>
+          <li><a href="#2-social-rooms">Social Rooms</a></li>
+          <li><a href="#3-sightseeing-in-chicago">Sightseeing in Chicago</a></li>
+          <li><a href="#4-sightseeing-in-fermilab">Sightseeing in Fermilab</a></li>
+        </ul>
       </div>,
       <div className={styles.heroPanel} key={2}>
         <div className={classNames([mediaBrowserStyles.mediaBrowser, mediaBrowserStyles.mediaBrowserInline])}>

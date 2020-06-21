@@ -222,19 +222,26 @@ function RoomItem({ room }) {
     canJoin = false;
   }
 
+  let room_closed = room.name.includes("Closed");
+
+  let room_name = room.name.replace(" - Closed", "");
+
   return (
     <li key={room.id}>
-      <p className={styles.roomTitle}>{room.name}</p>
+      <p className={styles.roomTitle}>{room_name}</p>
       <span>
         <FontAwesomeIcon icon={faUsers} />
         <b>{`${room.member_count} / ${room.room_size}`}</b>
-        {canSpectate ? (
+        {room_closed ? (
+          <p className={classNames(styles.joinButton, styles.joinButtonDisabled)}>Closed</p>
+         ) : (
+          canSpectate ? (
           <a className={classNames(styles.joinButton)} href={room.url}>
             {canJoin ? "Join" : "Spectate"}
           </a>
         ) : (
           <p className={classNames(styles.joinButton, styles.joinButtonDisabled)}>Full</p>
-        )}
+        ))}
       </span>
     </li>
   );

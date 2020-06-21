@@ -90,17 +90,11 @@ async function fetchFeaturedRooms() {
   //   fetchReticulumAuthenticated("/api/v1/media/search?source=rooms&filter=public")
   // ]);
 
-  // const favoriteRoomsResult = await (authChannel.signedIn
-  //     ? fetchReticulumAuthenticated(
-  //         `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
-  //       )
-  //     : Promise.resolve({ entries: [] });
-
   let favoriteRoomsResult = null;
   let publicRoomsResult = null;
 
   if (!authChannel.signedIn) {
-    favoriteRoomsResult = [];
+    favoriteRoomsResult = { entries: [] };
   } else {
     favoriteRoomsResult = await fetchReticulumAuthenticated(
     `/api/v1/media/search?source=favorites&type=rooms&user=${store.credentialsAccountId}`
