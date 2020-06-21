@@ -17,6 +17,8 @@ AFRAME.registerComponent("open-media-button", {
 
       this.el.object3D.visible = !!visible;
 
+      this.is_closed = false;
+
       // console.log('src', src);
 
       if (visible) {
@@ -31,7 +33,11 @@ AFRAME.registerComponent("open-media-button", {
             if (src.includes("/room_links/")) {
               // var room_number = src.substr(src.lastIndexOf("to_room_"),  src.lastIndexOf(".html"));
               var room_number = src.match(/\d+/g).slice(-1)[0];
-              label = "visit room " + room_number;
+              label = "Visit Room " + room_number;
+              if (room_number > 26) {
+                label = "Room Closed";
+                this.is_closed = true;
+              }
               // console.log('********************************************* room_number', room_number, '     label', label);
             }
           }
@@ -41,6 +47,10 @@ AFRAME.registerComponent("open-media-button", {
     };
 
     this.onClick = async () => {
+
+      if (this.is_closed) {
+        return;
+      }
       const mayChangeScene = this.el.sceneEl.systems.permissions.canOrWillIfCreator("update_hub");
 
       const exitImmersive = async () => await handleExitTo2DInterstitial(false, () => {}, true);
