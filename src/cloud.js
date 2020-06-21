@@ -139,7 +139,7 @@ function HubsCloudPage() {
                 <p className={styles.centerLg}>
                   This year the Neutrino 2020 conference is entirely online. This poses a particular problem for a
                   poster session, which main goal is to facilitate the interaction among all conference
-                  partecipants, and to give everyone the oppurtinity to share their own work.
+                  participants, and to give everyone the opportunity to share their own work.
                   In an effort to keep the same spirit, we are hosting a virtual reality (VR) poster session,
                   using a customized version of <a href="https://hubs.mozilla.com/#/">Mozilla Hubs</a>:
                   a social VR platform that runs right in the browser.
@@ -171,10 +171,10 @@ function HubsCloudPage() {
             <h2>2. Enter a Room</h2>
             <p>
               Make sure you are using Mozilla Firefox (Hubs works best in Firefox but also works on Chrome, Safari and Edge.<br></br>
-              Also make sure you are using wired heaphones (Hubs doesn't work properly without them!).<br></br>
+              Also, make sure you are using wired headphones (Hubs doesn't work properly without them!).<br></br>
               You can see all the available rooms in the <a href="/">main page</a>.<br></br>
-              There is a maximum number of partecipants per room.<br></br>
-              The poster session is spread over several room. Each room contains 5 posters each.<br></br>
+              There is a maximum number of participants per room.<br></br>
+              The poster session is spread over several rooms. Each room contains 5 posters each.<br></br>
               The number of partecipants in a room is limited, and you can see the room occupancy in the <a href="/">main page</a>.<br></br>
               To enter a room, simply pick one which is not full and click on it.<br></br>
             </p>
@@ -314,6 +314,7 @@ function HubsCloudPage() {
               To get feedback fast, please ask us in the Nu2020 Slack channel #virtual-reality.<br/>
               Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.<br/>
               Alternatively, you can send us an email at <a href="mailto:nu2020-hubs@fnal.gov?body=[Please specify what OS, computer, and browser you were using.]">nu2020-hubs@fnal.gov</a>.
+              In the VR rooms, conference organizers are identifiable by their Neutrino 2020 T-Shirt.
           </section>
 
           {/*<section className={classNames(styles.features, styles.colLg, styles.centerLg)}>
