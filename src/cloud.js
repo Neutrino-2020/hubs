@@ -250,6 +250,18 @@ function HubsCloudPage() {
               </div>
             </section>
           </div>
+          <div className={styles.herow} id="avatar_volume">
+            <section className={styles.colLg}>
+              <div className={classNames(styles.heroMedia, styles.centerLg)}>
+                <img src="./assets/docs/nu2020-hubs-ui-avatarvolume.png" alt="UI"/>
+              </div>
+              <div className={styles.heroContent}>
+                <p className={styles.centerLg}>
+                  Point at the avatar of another user and click spacebar. Here, you can change the volume of a particular user.
+                </p>
+              </div>
+            </section>
+          </div>
           <section className={styles.left}>
             <h1 id="troubleshooting">Troubleshooting</h1>
             Having problems? Belowe we have collected some of the typical issues that may encounter.<br/>
@@ -262,6 +274,12 @@ function HubsCloudPage() {
             </ul>
             <h3>Getting stuck on loading screen</h3>
               If you are getting stuck on the loading screen, try refreshing the page or loading the scene on another browser or device.
+            <h3>Cannot hear well who is speaking</h3>
+              You can customize the volume for a particular avatar by folowing the instructions above under <a href="/cloud#avatar_volume">Object Menus</a>.
+            <h3>Cannot see the poster well</h3>
+              You can change the orientation of your head to better look at a poster.
+              See <a href="https://www.youtube.com/watch?v=jG3Vms5jS8Y">this video</a> for tips on how to move in VR.
+              You can also open the poster in another tab. To do this, look at the poster and hit spacebar. Then, click on "Open Link".
             <h3>There is echo in the room</h3>
               Echo may occur if a participant is not wearing headphones.
               You can also reduce the volume of the user in their avatar menu.
