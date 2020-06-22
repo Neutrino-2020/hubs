@@ -160,10 +160,10 @@ function HubsCloudPage() {
               <img src="./assets/docs/vr_video.jpg" alt="Audio Setup" width="400"/>
             </a>*/}
             <h4>Check out the virtual reality tutorial video <a href="https://www.youtube.com/watch?v=jG3Vms5jS8Y">here</a>!</h4>
-            <h2>1. Log In</h2>
-            You will only be able to enter a virtual room if you are logged in. To log in:
+            <h2>1. Sign In</h2>
+            You will only be able to enter a virtual room if you are logged in. To sign in:
             <ul>
-              <li>Go to the <a href="/">main page</a> and click on the "Log in" link on the top right.</li>
+              <li>Go to the <a href="/">main page</a> and click on the "Sign in" link on the top right.</li>
               <li>Enter the email you used for you Indico registration.</li>
               <li>You will receive an email with a link (make sure to check your spam folder).</li>
               <li>Clicking on the link will log you into Neutrino 2020 Hubs!</li>
@@ -313,7 +313,7 @@ function HubsCloudPage() {
             <h3>Need help with something else?</h3>
               To get feedback fast, please ask us in the Nu2020 Slack channel #virtual-reality.<br/>
               Not part of the Slack workspace yet? Fill up <a href="https://forms.gle/w33uo8FKyUXrM9j2A">this form</a> to be added.<br/>
-              Alternatively, you can send us an email at <a href="mailto:nu2020-hubs@fnal.gov?body=[Please specify what OS, computer, and browser you were using.]">nu2020-hubs@fnal.gov</a>.
+              Alternatively, you can send us an email at <a href="mailto:nu2020-hubs@fnal.gov?body=[Please specify what OS, computer, and browser you were using.]">nu2020-hubs@fnal.gov</a>.<br/>
               In the VR rooms, conference organizers are identifiable by their Neutrino 2020 T-Shirt.
           </section>
 

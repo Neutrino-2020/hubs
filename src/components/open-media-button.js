@@ -37,6 +37,7 @@ AFRAME.registerComponent("open-media-button", {
               if (room_number > 26) {
                 label = "Room Closed";
                 this.is_closed = true;
+                console.log('src set to close', src);
               }
               // console.log('********************************************* room_number', room_number, '     label', label);
             }
@@ -49,6 +50,7 @@ AFRAME.registerComponent("open-media-button", {
     this.onClick = async () => {
 
       if (this.is_closed) {
+        // console.log('--------------- is closed');
         return;
       }
       const mayChangeScene = this.el.sceneEl.systems.permissions.canOrWillIfCreator("update_hub");
