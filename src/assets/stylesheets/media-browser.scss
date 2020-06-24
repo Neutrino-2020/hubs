@@ -724,22 +724,28 @@ $action-color: var(--action-color, $default-action-color);
   padding: 4px 0;
   color: white;
   border-radius: 4px;
-  background-color: $action-color;
+  background-color: #426543;
 
   &:hover {
     background-color: #225187;
   }
 
   &:active {
-    background-color: $action-color;
-  }
-
-  &:visited {
-    background-color: #226287;
+    background-color: #426543;
   }
 
   @media (max-width: 1024px) {
     width: 60px;
+  }
+}
+
+:local(.join-button-almost-full) {
+  color: black;
+  background-color: #e8b55e;
+  cursor: default;
+
+  &:hover, &:active {
+    background-color: #e8b55e;
   }
 }
 

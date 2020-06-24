@@ -25,7 +25,7 @@ import { remixAvatar } from "../utils/avatar-utils";
 import { fetchReticulumAuthenticated } from "../utils/phoenix-utils";
 import { getReticulumFetchUrl } from "../utils/phoenix-utils";
 
-const maxRoomCap = 50;
+const maxRoomCap = 40;
 
 dayjs.extend(relativeTime);
 
@@ -212,7 +212,8 @@ class ConferenceRoomGroup extends Component {
 function RoomItem({ room }) {
   let canSpectate = true;
   let canJoin = true;
-  // console.log('room', room);
+  let almostFull = false;
+  console.log('room', room);
 
   if (room.member_count + room.lobby_count >= maxRoomCap) {
     canSpectate = false;
@@ -221,6 +222,17 @@ function RoomItem({ room }) {
   if (room.member_count >= room.room_size) {
     canJoin = false;
   }
+
+  if (room.description.includes("jump from") && (room.member_count >= 0.5 * room.room_size || !canJoin)) {
+    almostFull = true;
+  }
+  // console.log('almostFull', almostFull);
+  // console.log('room.member_count', room.member_count);
+  // console.log('room.lobby_count', room.lobby_count);
+  // console.log('room.room_size', room.room_size);
+  // console.log('0.5 * room.room_size', 0.5 * room.room_size);
+  // console.log('canSpectate', canSpectate);
+  // console.log('room.member_count >= 0.5 * room.room_size', room.member_count >= 0.5 * room.room_size);
 
   let room_closed = room.name.includes("Closed");
 
@@ -231,12 +243,15 @@ function RoomItem({ room }) {
       <p className={styles.roomTitle}>{room_name}</p>
       <span>
         <FontAwesomeIcon icon={faUsers} />
-        <b>{`${room.member_count} / ${room.room_size}`}</b>
+        {room.lobby_count ? (
+          <b>{`${room.member_count} (+${room.lobby_count}) / ${room.room_size}`}</b>
+          ) : (<b>{`${room.member_count} / ${room.room_size}`}</b>)
+        }
         {room_closed ? (
           <p className={classNames(styles.joinButton, styles.joinButtonDisabled)}>Closed</p>
          ) : (
           canSpectate ? (
-          <a className={classNames(styles.joinButton)} href={room.url}>
+          <a className={almostFull ? classNames(styles.joinButton, styles.joinButtonAlmostFull) : classNames(styles.joinButton)} href={room.url}>
             {canJoin ? "Join" : "Spectate"}
           </a>
         ) : (
