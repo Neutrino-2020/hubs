@@ -453,7 +453,7 @@ class HomeRoot extends Component {
       </div>,
       <div className={styles.indexButtons}>
         <ul>
-          <li><a href="#1-poster-session-1">Poster Session</a></li>
+          <li><a href="#1-poster-session-3">Poster Session</a></li>
           <li><a href="#2-social-rooms">Social Rooms</a></li>
           <li><a href="#3-sightseeing-in-chicago">Sightseeing in Chicago</a></li>
           <li><a href="#4-sightseeing-in-fermilab">Sightseeing in Fermilab</a></li>
