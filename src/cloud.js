@@ -275,7 +275,9 @@ function HubsCloudPage() {
             <h3>Getting stuck on loading screen</h3>
               If you are getting stuck on the loading screen, try refreshing the page or loading the scene on another browser or device.
             <h3>Cannot hear well who is speaking</h3>
-              You can customize the volume for a particular avatar by folowing the instructions above under <a href="/cloud#avatar_volume">Object Menus</a>.
+              You can customize the volume for a particular avatar by folowing the instructions above under <a href="/cloud#avatar_volume">Object Menus</a>.<br/>
+              Additionally, in preferences (under the three-bar menu upper-right), you can select select "Disable auto mic adjustment",
+              then set your preferred gain in your the machine preferences.
             <h3>Cannot see the poster well</h3>
               You can change the orientation of your head to better look at a poster.
               See <a href="https://www.youtube.com/watch?v=jG3Vms5jS8Y">this video</a> for tips on how to move in VR.
