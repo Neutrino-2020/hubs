@@ -34,7 +34,7 @@ AFRAME.registerComponent("open-media-button", {
               // var room_number = src.substr(src.lastIndexOf("to_room_"),  src.lastIndexOf(".html"));
               var room_number = src.match(/\d+/g).slice(-1)[0];
               label = "Visit Room " + room_number;
-              if (room_number > 27) {
+              if (room_number > 28) {
                 label = "Room Closed";
                 this.is_closed = true;
                 console.log('src set to close', src);
